@@ -8,10 +8,6 @@ https://sharp.pixelplumbing.com/
 
 ### Usage:
 
-Enter path to the file you want to convert when prompted.
-It would be easiest to put the desired file in the same directory as main.js to avoid convouluted pathing.
-The converted file should be deposited in the main directory as a webp file.
-
-### Next Stage
-
-Implement input/output folders
+Enter name of the file you want to convert when prompted.
+The file you want to convert needs to be in the input directory in the img folder.
+The converted file should be deposited in the output directory as a webp file.

@@ -15,8 +15,8 @@ async function setInput() {
     type: "input",
     message: "which file do you want to convert?",
   });
-  inputImg = answers.input_file;
+  inputImg = `img/input/${answers.input_file}`;
 }
 
 await setInput();
-await sharp(inputImg).toFile(`${path.parse(`./${inputImg}`).name}.webp`);
+await sharp(inputImg).toFile(`img/output/${path.parse(`./img/input/${inputImg}`).name}.webp`);
