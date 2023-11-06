@@ -1,6 +1,6 @@
 ### CLI Image converter with Sharp
 
-A CLI app using Sharp to convert images to webp.
+A CLI app using Sharp to convert images to webp and some other formats.
 
 - Sharp:
   https://github.com/lovell/sharp
