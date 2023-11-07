@@ -29,9 +29,7 @@ async function userInstructions() {
   )}
   
   `);
-  } /*else {
-    console.log("Converting...");
-  }*/
+  }
 }
 
 async function setInput() {
@@ -77,6 +75,3 @@ await userInstructions();
 await setInput();
 await setFormat();
 await convert();
-/*await sharp(inputImg).toFile(
-  `img/output/${path.parse(`./img/input/${inputImg}`).name}.${outFormat}`
-);*/
