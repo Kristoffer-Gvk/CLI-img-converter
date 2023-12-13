@@ -5,6 +5,7 @@ import inquirer from "inquirer";
 import sharp from "sharp";
 import path from "path";
 import chalk from "chalk";
+import fs from "fs";
 
 const options = yargs
   .option("i", { alias: "input", describe: "File to use as input", type: "string" })
@@ -12,6 +13,13 @@ const options = yargs
 
 let inputImg;
 let outFormat;
+let files = [];
+
+async function getInputFiles() {
+  files = [];
+  files = fs.readdirSync("./img/input");
+  return files;
+}
 
 async function userInstructions() {
   if (!options.input || !options.output) {
@@ -38,6 +46,20 @@ async function setInput() {
       name: "input_file",
       type: "input",
       message: "which file do you want to convert?\n",
+    });
+    inputImg = `img/input/${answers.input_file}`;
+  } else {
+    inputImg = `img/input/${options.input}`;
+  }
+}
+async function selectFile() {
+  if (!options.input) {
+    const inputFiles = await getInputFiles();
+    const answers = await inquirer.prompt({
+      name: "input_file",
+      type: "list",
+      message: "which file do you want to convert?\n",
+      choices: inputFiles,
     });
     inputImg = `img/input/${answers.input_file}`;
   } else {
@@ -72,6 +94,7 @@ async function convert() {
 }
 
 await userInstructions();
-await setInput();
+//await setInput();
+await selectFile();
 await setFormat();
 await convert();
