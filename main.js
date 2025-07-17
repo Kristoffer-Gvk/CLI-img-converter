@@ -26,7 +26,7 @@ async function userInstructions() {
     console.log(`
   ${chalk.bgRed("HOW TO USE:")}
   1. Put the file you want to convert into the input folder in the img folder.
-  2. When prompted for a file to convert, write the name of the file including file extentson (.jpg, .png ex: "doggo.jpg")
+  2. Select which file you want to convert from the list with the arrow keys and pressing enter. The files listed will be the ones in the input folder.
   3. Select your desired output format from the list with the arrow keys and pressing enter, then wait for the conversion to complete.
   
   Available formats: avif, tiff, jpeg, png, webp.
